@@ -26,6 +26,22 @@ var score = 0;
 var scoreText;
 var bombs;
 
+function resizeCanvas() {
+  let canvas = document.querySelector("canvas");
+  let windowWidth = window.innerWidth;
+  let windowHeight = window.innerHeight;
+  let windowRatio = windowWidth / windowHeight;
+  let gameRatio = game.config.width / game.config.height;
+  if(windowRatio < gameRatio){
+    canvas.style.width = windowWidth + "px";
+    canvas.style.height = (windowWidth / gameRatio) + "px";
+  }
+  else{
+    canvas.style.width = (windowHeight * gameRatio) + "px";
+    canvas.style.height = windowHeight + "px";
+  }
+};
+
 function preload ()
 {
   this.load.image('sky', 'assets/sky.png');
@@ -99,6 +115,8 @@ function create ()
   bombs = this.physics.add.group();
   this.physics.add.collider(bombs, platforms);
   this.physics.add.collider(player, bombs, hitBomb, null, this);
+
+  resizeCanvas();
 }
 
 function update ()
@@ -157,3 +175,11 @@ function hitBomb (player, bomb)
   player.anims.play('turn');
   gameOver = true;
 }
+
+(function() {
+  let initialize = function() {
+    window.addEventListener('resize', resizeCanvas);
+  };
+
+  initialize();
+})();
