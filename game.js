@@ -156,4 +156,10 @@ function hitBomb (player, bomb)
   player.setTint(0xff0000);
   player.anims.play('turn');
   gameOver = true;
+  gameOverText = this.add.text(game.config.width / 2,
+                               game.config.height / 2,
+                               'GAME OVER',
+                               { fontSize: '48px', fill: '#fff' });
+
+  gameOverText.setDepth(3);
 }
