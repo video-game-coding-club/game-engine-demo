@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - "node"
+
+install:
+  - npm install
+  - bundle install
+
+cache:
+  - npm
+  - bundler
+
+jobs:
+  include:
+    - stage: Lint
+      script:
+        - bundle exec danger
+
+    - stage: Build
+      script:
+        - bundle exec jekyll build
