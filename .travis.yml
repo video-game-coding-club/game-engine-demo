@@ -4,18 +4,16 @@ cache:
   directories:
     - ${HOME}/.gem
 
-before_install:
-  - gem update --system
-  - gem install bundler
-
 install:
-  - bundle install
+  - bundle install --path ${HOME}/.gem
+  - npm install npm jshint PrettyCSS js-beautify html-linter -g
 
 jobs:
   include:
     - stage: Lint
       script:
         - bundle exec danger
+        - html-linter --config html-linter.json *.html
 
     - stage: Build
       script:
