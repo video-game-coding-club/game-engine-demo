@@ -21,3 +21,10 @@ jobs:
     - stage: Build
       script:
         - bundle exec jekyll build
+
+    - stage: Build Android App
+        script:
+          - cordova create game-engine-demo io.github.example GameEngineDemo
+          - cd game-engine-demo
+          - cordova platform add android
+          - cordova requirements
