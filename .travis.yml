@@ -5,6 +5,9 @@ cache:
     - ${HOME}/.gem
     - node_modules
 
+env:
+  - PATH=${PATH}:${PWD}/node_modules/.bin
+
 install:
   - bundle install --path ${HOME}/.gem
   - npm install
@@ -13,7 +16,7 @@ jobs:
   include:
     - stage: Lint
       script:
-        - ./node_modules/.bin/html-linter --config html-linter.json *.html
+        - html-linter --config html-linter.json *.html
 
     - stage: Build
       script:
