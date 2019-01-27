@@ -1,3 +1,15 @@
 {
-  "homepage": "https://video-game-coding-club.github.io/game-engine-demo/"
+  "homepage": "https://video-game-coding-club.github.io/game-engine-demo/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/video-game-coding-club/game-engine-demo.git"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "PrettyCSS": "^0.3.17",
+    "html-linter": "^1.1.1",
+    "js-beautify": "^1.8.9",
+    "jshint": "^2.9.7",
+    "npm": "^6.7.0"
+  }
 }

@@ -31,7 +31,7 @@ fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
 # Run prose linter
-prose.lint_files
+prose.lint_files "*.md"
 prose.ignored_words = ["hacktoberfest"]
 prose.check_spelling
 

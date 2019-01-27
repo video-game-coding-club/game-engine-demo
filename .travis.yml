@@ -7,13 +7,13 @@ cache:
 
 install:
   - bundle install --path ${HOME}/.gem
-  - npm install npm jshint PrettyCSS js-beautify html-linter
+  - npm install
 
 jobs:
   include:
     - stage: Lint
       script:
-        - bundle exec danger
+        # - bundle exec danger
         - ./node_modules/.bin/html-linter --config html-linter.json *.html
 
     - stage: Build
