@@ -1,5 +1,9 @@
 {
   "homepage": "https://video-game-coding-club.github.io/game-engine-demo/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/video-game-coding-club/game-engine-demo.git"
+  },
   "devDependencies": {
     "PrettyCSS": "^0.3.17",
     "html-linter": "^1.1.1",
