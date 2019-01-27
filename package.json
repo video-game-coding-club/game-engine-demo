@@ -4,6 +4,7 @@
     "type": "git",
     "url": "https://github.com/video-game-coding-club/game-engine-demo.git"
   },
+  "license": "Apache-2.0",
   "devDependencies": {
     "PrettyCSS": "^0.3.17",
     "html-linter": "^1.1.1",
