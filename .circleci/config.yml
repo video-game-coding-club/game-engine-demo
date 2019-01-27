@@ -3,11 +3,28 @@
 version: 2.0
 
 jobs:
+
+  warmup:
+    docker:
+      - image: circleci/node
+    steps:
+      - restore_cache:
+          key: package_cache
+      - run:
+          command: |
+            sudo apt-get install bundler
+            bundle install --path ${HOME}/.gem
+            npm install
+      - save_cache:
+          key: package_cache
+          paths:
+            - ${HOME}/.gem
+            - node_modules
+
   build:
     docker:
       - image: circleci/node
-    branches:
-      ignore:
-        - gh_pages
     steps:
+      - restore_cache:
+          key: package_cache
       - checkout
