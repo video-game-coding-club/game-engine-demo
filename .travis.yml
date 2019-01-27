@@ -5,6 +5,11 @@ cache:
     - ${HOME}/.gem
     - node_modules
 
+addons:
+  apt:
+    packages:
+      - default-jdk
+
 env:
   - PATH=${PATH}:${PWD}/node_modules/.bin
 
