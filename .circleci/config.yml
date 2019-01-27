@@ -11,10 +11,11 @@ jobs:
       - restore_cache:
           key: package_cache
       - run:
-          command: |
-            sudo apt-get install bundler
-            bundle install --path ${HOME}/.gem
-            npm install
+          command: sudo apt-get install bundler
+      - run:
+          command: bundle install --path ${HOME}/.gem
+      - run:
+          command: npm install
       - save_cache:
           key: package_cache
           paths:
@@ -28,3 +29,10 @@ jobs:
       - restore_cache:
           key: package_cache
       - checkout
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - warmup
+      - build
