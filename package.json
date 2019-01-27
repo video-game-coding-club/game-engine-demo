@@ -7,9 +7,11 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "PrettyCSS": "^0.3.17",
+    "cordova": "^8.1.2",
     "html-linter": "^1.1.1",
     "js-beautify": "^1.8.9",
     "jshint": "^2.9.7",
     "npm": "^6.7.0"
-  }
+  },
+  "dependencies": {}
 }
