@@ -9,6 +9,7 @@ addons:
   apt:
     packages:
       - default-jdk
+      - android
 
 env:
   - PATH=${PATH}:${PWD}/node_modules/.bin
