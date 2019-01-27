@@ -7,7 +7,7 @@ cache:
 
 install:
   - bundle install --path ${HOME}/.gem
-  - npm install npm jshint PrettyCSS js-beautify html-linter
+  - npm install
 
 jobs:
   include:
