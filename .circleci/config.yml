@@ -36,4 +36,6 @@ workflows:
   build:
     jobs:
       - warmup
-      - build
+      - build:
+          requires:
+            - warmup
