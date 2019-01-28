@@ -5,6 +5,12 @@ cache:
     - ${HOME}/.gem
     - node_modules
 
+addons:
+  apt:
+    packages:
+      - default-jdk
+      - android
+
 env:
   - PATH=${PATH}:${PWD}/node_modules/.bin
 
@@ -21,3 +27,11 @@ jobs:
     - stage: Build
       script:
         - bundle exec jekyll build
+
+    - stage: Apps
+      name: Build Android App
+      script:
+        - cordova create game-engine-demo io.github.example GameEngineDemo
+        - cd game-engine-demo
+        - cordova platform add android
+        - cordova requirements || true
