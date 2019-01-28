@@ -10,6 +10,8 @@ jobs:
     steps:
       - restore_cache:
           key: package_cache
+      - run:
+          command: ls -lh
       - checkout
       - run:
           command: sudo apt-get install bundler
